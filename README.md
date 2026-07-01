@@ -1,1 +1,10 @@
 # cloud-cost-analysis
+## 1. Specifications - **Compute**: 2 vCPUs, 8 GB RAM (small web app workload)- **Storage**: 100 GB object storage- **Data Transfer**: ~200 GB outbound per month
+---
+## 2. AWS Cost Breakdown - **EC2 (Linux, t3.medium)**: ~$30/month- **S3 Storage (100 GB)**: ~$2.30/month- **Data Transfer (200 GB outbound)**: ~$18/month- **Inter-zone transfer (200 GB)**: ~$2/month- **Total AWS Estimate**: **~$52/month**---
+## 3. Azure Cost Breakdown - **VM (Linux, B2s)**: ~$33/month- **Blob Storage (100 GB hot tier)**: ~$2/month- **Data Transfer (200 GB outbound)**: ~$17/month- **Inter-zone transfer (200 GB)**: ~$3/month- **Total Azure Estimate (Linux)**: **~$55/month**- **Windows VM with Hybrid Benefit**: ~$25/month- **Total Azure Estimate (Windows + Hybrid Benefit)**: **~$47/month**---
+## 4. Discount Mechanisms - **AWS**: Savings Plans (up to 72%), Reserved Instances, Spot Instances (up to 90% cheaper).- **Azure**: Reserved Instances (up to 72%), Savings Plan for Compute, Hybrid Benefit (up to 36% savings for Windows workloads).
+---
+## 5. Comparison Table| Feature        | AWS (Linux) | Azure (Linux) | Azure (Windows + Hybrid Benefit) ||----------------|-------------|---------------|----------------------------------|| Compute        | $30         | $33           | $25                              || Storage        | $2.30       | $2            | $2                               || Data Transfer  | $18         | $17           | $17                              || Inter-zone     | $2          | $3            | $3                               || **Total**      | **$52**     | **$55**       | **$47**                          |
+---
+## 6. Conclusion - **AWS** is slightly cheaper for Linux-based workloads.  - **Azure** is more cost-effective for Windows workloads due to Hybrid Benefit.  - Networking costs are similar, with AWS marginally lower.  - **Optimization strategies**:    1. Right-size instances using AWS Compute Optimizer or Azure Advisor.    2. Apply long-term commitment discounts (Savings Plans or Reserved Instances).
